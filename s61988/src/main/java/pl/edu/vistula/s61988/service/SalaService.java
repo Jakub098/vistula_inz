@@ -13,6 +13,7 @@ import java.util.Optional;
 public class SalaService {
 
     private final SalaRepository salaRepository;
+
     public Iterable<Sala> getAllHalls() {
         return salaRepository.findAll();
     }
