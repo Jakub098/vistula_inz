@@ -7,6 +7,7 @@ import lombok.Setter;
 import pl.edu.vistula.s61988.views.Views;
 
 import java.time.Instant;
+import java.util.List;
 
 @Entity
 @Table(name = "Seans")
@@ -33,5 +34,8 @@ public class Seans {
     @JoinColumn(name = "id_sala", nullable = false)
     @JsonView(Views.ScreeningView.class)
     private Sala hall;
+
+    @OneToMany(mappedBy = "screening")
+    private List<Rezerwacja> reservations;
 
 }

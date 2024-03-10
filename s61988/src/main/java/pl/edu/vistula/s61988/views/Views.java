@@ -13,4 +13,13 @@ public class Views {
     public static class SeatView {
     }
 
+    public static class SeatReservationView {
+    }
+
+    public static class ReservationView {
+    }
+
+    public static class UserView {
+    }
+
 }
