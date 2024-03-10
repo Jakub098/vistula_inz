@@ -18,11 +18,11 @@ public class Seans {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_seans")
-    @JsonView(Views.ScreeningView.class)
+    @JsonView({Views.ScreeningView.class, Views.ReservationView.class})
     private Long id;
 
     @Column(name = "data_rozpoczecia")
-    @JsonView(Views.ScreeningView.class)
+    @JsonView({Views.ScreeningView.class, Views.ReservationView.class})
     private Instant seansDate;
 
     @ManyToOne

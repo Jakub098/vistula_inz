@@ -18,7 +18,7 @@ public class Uzytkownik {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_uzytkownik"
     )
-    @JsonView(Views.UserView.class)
+    @JsonView({Views.UserView.class, Views.ReservationView.class})
     private Long id;
 
     @JsonView(Views.UserView.class)
