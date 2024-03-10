@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import pl.edu.vistula.s61988.views.Views;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Sala")
 @Getter
@@ -18,6 +20,13 @@ public class Sala {
     @JsonView(Views.HallView.class)
     private Long id;
 
-    @JsonView(Views.HallView.class)
+    @JsonView({Views.HallView.class, Views.ScreeningView.class, Views.SeatView.class})
     private Long numer;
+
+    @OneToMany(mappedBy = "hall")
+    private List<Seans> halls;
+
+    @OneToMany(mappedBy = "sala")
+    private List<Miejsce> miejsca;
+
 }

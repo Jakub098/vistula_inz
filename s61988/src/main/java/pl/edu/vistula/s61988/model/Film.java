@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import pl.edu.vistula.s61988.views.Views;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Film")
 @Getter
@@ -16,13 +18,16 @@ public class Film {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_film"
     )
-    @JsonView(Views.FilmView.class)
+    @JsonView({Views.FilmView.class, Views.ScreeningView.class})
     private Long id;
 
-    @JsonView(Views.FilmView.class)
+    @JsonView({Views.FilmView.class, Views.ScreeningView.class})
     private String nazwa;
     @JsonView(Views.FilmView.class)
     private String opis;
-    @JsonView(Views.FilmView.class)
+    @JsonView({Views.FilmView.class, Views.ScreeningView.class})
     private int dlugosc;
+
+    @OneToMany(mappedBy = "film")
+    private List<Seans> screenings;
 }

@@ -7,4 +7,10 @@ public class Views {
     public static class HallView {
     }
 
+    public static class ScreeningView {
+    }
+
+    public static class SeatView {
+    }
+
 }
