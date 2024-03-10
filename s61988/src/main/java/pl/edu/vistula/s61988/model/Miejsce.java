@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 import pl.edu.vistula.s61988.views.Views;
 
-import java.util.List;
-
 @Entity
 @Table(name = "Miejsce")
 @Getter

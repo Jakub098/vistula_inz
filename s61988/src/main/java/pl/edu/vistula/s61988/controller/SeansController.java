@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.edu.vistula.s61988.model.Film;
-import pl.edu.vistula.s61988.model.Sala;
 import pl.edu.vistula.s61988.model.Seans;
 import pl.edu.vistula.s61988.service.SeansService;
 import pl.edu.vistula.s61988.views.Views;

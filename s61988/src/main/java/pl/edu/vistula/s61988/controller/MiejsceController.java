@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.edu.vistula.s61988.model.Miejsce;
-import pl.edu.vistula.s61988.model.Sala;
 import pl.edu.vistula.s61988.service.MiejsceService;
 import pl.edu.vistula.s61988.views.Views;
 

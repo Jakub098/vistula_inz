@@ -2,7 +2,6 @@ package pl.edu.vistula.s61988.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.edu.vistula.s61988.model.Sala;
 import pl.edu.vistula.s61988.model.Seans;
 import pl.edu.vistula.s61988.repository.SeansRepository;
 
