@@ -1,4 +1,8 @@
+import { useGetFilmsQuery } from "../store/endpoints/movie";
+
 const Movies = () => {
+  const { data, isLoading } = useGetFilmsQuery();
+
   return (
     <>
       <h1>Filmy</h1>
