@@ -71,3 +71,26 @@ footer {
   bottom: 0;
   height: 5%;
 }
+
+/* https://tanstack.com/table/v8/docs/framework/react/examples/basic */
+table {
+  border: 1px solid lightgray;
+}
+
+tbody {
+  border-bottom: 1px solid lightgray;
+}
+
+th {
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  padding: 2px 4px;
+}
+
+tfoot {
+  color: gray;
+}
+
+tfoot th {
+  font-weight: normal;
+}

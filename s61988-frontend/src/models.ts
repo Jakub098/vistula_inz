@@ -4,3 +4,8 @@ export interface Film {
   opis: string;
   dlugosc: number;
 }
+
+export interface TableColumn<T> {
+  header: string;
+  accessor: keyof T;
+}
