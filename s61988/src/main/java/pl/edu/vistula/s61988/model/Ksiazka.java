@@ -10,22 +10,20 @@ import pl.edu.vistula.s61988.views.Views;
 import java.util.List;
 
 @Entity
-@Table(name = "Film")
+@Table(name = "Ksiazka")
 @Getter
 @Setter
-public class Film {
+public class Ksiazka {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_film"
+    @Column(name = "id_ksiazka"
     )
-    @JsonView(Views.FilmView.class)
+    @JsonView(Views.KsiazkaView.class)
     private Long id;
 
-    @Column(name = "rezyser"
-    )
-    @JsonView(Views.FilmView.class)
-    private String director;
+    @JsonView(Views.KsiazkaView.class)
+    private String isbn;
 
     @ManyToOne
     @JoinColumn(name = "id_kategoria", nullable = false)
@@ -33,6 +31,6 @@ public class Film {
 
     @ManyToOne
     @JoinColumn(name = "id_zasob", nullable = false)
-    private Zasoby film;
+    private Zasoby ksiazka;
 
 }

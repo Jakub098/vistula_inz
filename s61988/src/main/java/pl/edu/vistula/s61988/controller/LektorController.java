@@ -5,8 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.edu.vistula.s61988.model.Film;
-import pl.edu.vistula.s61988.service.FilmService;
+import pl.edu.vistula.s61988.model.Lektor;
+import pl.edu.vistula.s61988.service.LektorService;
 import pl.edu.vistula.s61988.views.Views;
 
 import java.util.List;
@@ -14,13 +14,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
-public class FilmController {
+public class LektorController {
 
-    private final FilmService filmService;
+    private final LektorService lektorService;
 
-    @GetMapping("/movies")
-    @JsonView(Views.FilmView.class)
-    public List<Film> getAllMovies() {
-        return filmService.getAllMovies();
+    @GetMapping("/lectors")
+    @JsonView(Views.LektorView.class)
+    public List<Lektor> getAllLectors() {
+        return lektorService.getAllLectors();
     }
 }

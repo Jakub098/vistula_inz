@@ -1,0 +1,113 @@
+INSERT INTO Kategoria_dict (nazwa) VALUES
+('Horror'),
+('Romans'),
+('Science Fiction'),
+('Kryminał'),
+('Fantasy'),
+('Dramat'),
+('Przygodowy'),
+('Komedia'),
+('Biograficzny'),
+('Historyczny'),
+('Thriller'),
+('Młodzieżowy'),
+('Sensacyjny'),
+('Literatura Piękna'),
+('Fantastyka naukowa'),
+('Literatura faktu'),
+('Kryminał'),
+('Fantastyka dziecięca'),
+('Romans historyczny'),
+('Komedia romantyczna');
+
+INSERT INTO Dostepnosc_dict (nazwa) VALUES
+('tak'),
+('nie');
+
+INSERT INTO Lektor (imie, nazwisko) VALUES
+('Adam', 'Nowak'),
+('Anna', 'Kowalska'),
+('Piotr', 'Wiśniewski'),
+('Alicja', 'Dąbrowska'),
+('Krzysztof', 'Lewandowski');
+
+INSERT INTO Zasoby (tytul, rok_wydania, id_dostepnosc) VALUES
+('Harry Potter i Kamień Filozoficzny', '2001-06-26', 1),
+('Władca Pierścieni: Drużyna Pierścienia', '2001-12-19', 1),
+('Złodziejka Książek', '2014-01-31', 1),
+('Gra o Tron', '2011-04-17', 1),
+('Duma i uprzedzenie', '2005-11-11', 1),
+('Matrix', '1999-03-31', 2),
+('Incepcja', '2010-07-08', 2),
+('Piraci z Karaibów: Klątwa Czarnej Perły', '2003-07-09', 2),
+('Zielona mila', '1999-12-10', 2),
+('Avengers: Wojna bez granic', '2018-04-23', 2),
+('Dzieci z Bullerbyn', '1963-11-01', 1),
+('Opowieści z Narnii: Lew, Czarownica i stara szafa', '2005-12-09', 1),
+('Sherlock Holmes', '2009-12-25', 1),
+('Opowieści z Podwórza Dziewczynki', '1987-05-10', 1),
+('O psie który jeździł koleją', '1966-12-01', 1),
+('Siedem', '1995-09-22', 2),
+('Gladiator', '2000-05-05', 2),
+('Terminator 2: Dzień sądu', '1991-07-03', 2),
+('Forrest Gump', '1994-07-06', 2),
+('Casino Royale', '2006-11-14', 2),
+('W pustyni i w puszczy', '1973-12-25', 1),
+('Pan Tadeusz', '1999-09-08', 1),
+('Wiedźmin: Ostatnie życzenie', '1993-05-01', 1),
+('Mistrz i Małgorzata', '1973-01-01', 1),
+('Wszystko za życie', '1999-01-15', 1),
+('Ojciec Chrzestny', '1972-03-14', 2);
+
+INSERT INTO Film (id_film, rezyser, id_kategoria) VALUES
+(1, 'David Yates', 14),
+(2, 'David Yates', 14),
+(3, 'Lana Wachowski', 15),
+(4, 'David Fincher', 16),
+(5, 'Steven Spielberg', 17);
+
+INSERT INTO Audiobook (id_audiobook, id_lektor, id_kategoria) VALUES
+(6, 1, 14),
+(7, 2, 14),
+(8, 3, 15),
+(9, 4, 16),
+(10, 5, 17);
+
+INSERT INTO Ksiazka (id_ksiazka, id_kategoria, isbn)
+VALUES
+(11, 1, 'ISBN11'),
+(12, 2, 'ISBN12'),
+(13, 3, 'ISBN13'),
+(14, 4, 'ISBN14'),
+(15, 5, 'ISBN15');
+
+INSERT INTO Konto (data_zalozenia, imie, nazwisko)
+VALUES
+('2022-01-01', 'Anna', 'Kowalska'),
+('2022-01-02', 'Jan', 'Nowak'),
+('2022-01-03', 'Katarzyna', 'Wiśniewska'),
+('2022-01-04', 'Piotr', 'Dąbrowski'),
+('2022-01-05', 'Małgorzata', 'Lewandowska'),
+('2022-01-06', 'Michał', 'Wójcik'),
+('2022-01-07', 'Agnieszka', 'Kamińska');
+
+INSERT INTO Pracownik (id_pracownik, id_aktywnosc)
+VALUES
+(1, 1),
+(2, 1),
+(3, 2);
+
+INSERT INTO Czytelnik (id_czytelnik, numer_karty)
+VALUES
+(4, '0000000000000001'),
+(5, '0000000000000002'),
+(6, '0000000000000003'),
+(7, '0000000000000004');
+
+INSERT INTO Wypozyczenie (data_wypozyczenia, data_zwrotu, id_zasob, id_pracownik, id_czytelnik)
+VALUES
+('2024-03-25', NULL, 1, 1, 4),
+('2024-03-26', '2024-04-01', 2, 1, 5),
+('2024-03-27', NULL, 3, 2, 6),
+('2024-03-28', NULL, 4, 2, 7),
+('2024-03-29', NULL, 5, 3, 4);
