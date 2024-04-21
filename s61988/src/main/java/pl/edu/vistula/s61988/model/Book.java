@@ -7,21 +7,19 @@ import lombok.Setter;
 import pl.edu.vistula.s61988.views.Views;
 
 @Entity
-@Table(name = "Audiobook")
+@Table(name = "Ksiazka")
 @Getter
 @Setter
-public class Audiobook {
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_audiobook"
+    @Column(name = "id_ksiazka"
     )
-    @JsonView(Views.AudiobookView.class)
+    @JsonView(Views.BookView.class)
     private Long id;
 
-    @Column(name = "ilosc_plyt"
-    )
-    @JsonView(Views.AudiobookView.class)
-    private Long totalCd;
+    @JsonView(Views.BookView.class)
+    private String isbn;
 
 }

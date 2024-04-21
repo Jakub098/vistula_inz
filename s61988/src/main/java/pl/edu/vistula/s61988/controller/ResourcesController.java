@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.edu.vistula.s61988.model.Audiobook;
-import pl.edu.vistula.s61988.service.AudiobookService;
+import pl.edu.vistula.s61988.model.Resources;
+import pl.edu.vistula.s61988.service.ResourcesService;
 import pl.edu.vistula.s61988.views.Views;
 
 import java.util.List;
@@ -15,14 +15,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
-public class AudiobookController {
+public class ResourcesController {
 
-    private final AudiobookService audiobookService;
+    private final ResourcesService zasobyService;
 
-    @GetMapping("/audiobooks")
-    @JsonView(Views.AudiobookView.class)
+    @GetMapping("/resources")
+    @JsonView(Views.ResourcesView.class)
     @CrossOrigin
-    public List<Audiobook> getAllAudiobooks() {
-        return audiobookService.getAllAudiobooks();
+    public List<Resources> getAllResources() {
+        return zasobyService.getAllResources();
     }
 }
