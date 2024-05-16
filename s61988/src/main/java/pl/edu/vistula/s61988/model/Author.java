@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import pl.edu.vistula.s61988.views.Views;
 
+import java.util.List;
+
 
 @Entity
 @Table(name = "Autor")
@@ -22,12 +24,14 @@ public class Author {
 
     @Column(name = "imie"
     )
-    @JsonView(Views.AuthorView.class)
+    @JsonView({Views.AuthorView.class, Views.ResourcesView.class})
     private String name;
 
     @Column(name = "nazwisko"
     )
-    @JsonView(Views.AuthorView.class)
+    @JsonView({Views.AuthorView.class, Views.ResourcesView.class})
     private String surname;
 
+    @OneToMany(mappedBy = "author")
+    private List<Resources> resources;
 }

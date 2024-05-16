@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import pl.edu.vistula.s61988.views.Views;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Pracownik")
 @Getter
@@ -16,11 +18,9 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pracownik"
     )
-    @JsonView(Views.EmployeeView.class)
+    @JsonView({Views.EmployeeView.class, Views.HireView.class})
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_konto", nullable = false)
-    private Account employeeAccount;
-
+    @OneToMany(mappedBy = "employee")
+    private List<Hire> hires;
 }

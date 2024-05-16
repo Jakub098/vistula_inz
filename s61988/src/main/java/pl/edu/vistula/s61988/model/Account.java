@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import pl.edu.vistula.s61988.model.dicts.AvailabilityDict;
 import pl.edu.vistula.s61988.views.Views;
 
 import java.util.Date;
@@ -35,6 +36,11 @@ public class Account {
     )
     @JsonView(Views.AccountView.class)
     private String surname;
+
+    @ManyToOne
+    @JoinColumn(name = "id_status_aktywnosci", nullable = false)
+    @JsonView(Views.AccountView.class)
+    private AvailabilityDict availabilityStatus;
 
 
 }

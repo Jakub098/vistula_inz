@@ -16,13 +16,16 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_film"
     )
-    @JsonView(Views.MovieView.class)
+    @JsonView({Views.MovieView.class, Views.ResourcesView.class})
     private Long id;
 
     @Column(name = "dlugosc"
     )
-    @JsonView(Views.MovieView.class)
+    @JsonView({Views.MovieView.class, Views.ResourcesView.class})
     private Long length;
 
+    @OneToOne
+    @JoinColumn(name = "id_film")
+    private Resources resource;
 
 }

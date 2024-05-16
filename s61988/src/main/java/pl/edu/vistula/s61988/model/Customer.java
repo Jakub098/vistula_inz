@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import pl.edu.vistula.s61988.views.Views;
 
+import java.util.List;
+
 
 @Entity
 @Table(name = "Czytelnik")
@@ -17,12 +19,15 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_czytelnik"
     )
-    @JsonView(Views.CustomerView.class)
+    @JsonView({Views.CustomerView.class, Views.HireView.class})
     private Long id;
 
     @Column(name = "numer_karty"
     )
     @JsonView(Views.CustomerView.class)
     private String cardNumber;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Hire> hires;
 
 }

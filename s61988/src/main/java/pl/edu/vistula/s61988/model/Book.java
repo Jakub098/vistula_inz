@@ -22,4 +22,8 @@ public class Book {
     @JsonView(Views.BookView.class)
     private String isbn;
 
+    @OneToOne
+    @JoinColumn(name = "id_ksiazka")
+    private Resources resource;
+
 }

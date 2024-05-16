@@ -19,7 +19,7 @@ public class HireController {
 
     private final HireService wypozyczenieService;
 
-    @GetMapping("/rents")
+    @GetMapping("/hires")
     @JsonView(Views.HireView.class)
     @CrossOrigin
     public List<Hire> getAllRents() {

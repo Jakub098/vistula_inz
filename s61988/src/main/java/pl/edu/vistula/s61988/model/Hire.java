@@ -31,5 +31,19 @@ public class Hire {
     @JsonView(Views.HireView.class)
     private Date returnDate;
 
+    @ManyToOne
+    @JoinColumn(name = "id_zasob", nullable = false)
+    @JsonView(Views.HireView.class)
+    private Resources resource;
+
+    @ManyToOne
+    @JoinColumn(name = "id_pracownik", nullable = false)
+    @JsonView(Views.HireView.class)
+    private Employee employee;
+
+    @ManyToOne
+    @JoinColumn(name = "id_czytelnik", nullable = false)
+    @JsonView(Views.HireView.class)
+    private Customer customer;
 
 }

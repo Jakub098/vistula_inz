@@ -24,4 +24,8 @@ public class Audiobook {
     @JsonView(Views.AudiobookView.class)
     private Long totalCd;
 
+    @OneToOne
+    @JoinColumn(name = "id_audiobook")
+    private Resources resource;
+
 }
